@@ -1,0 +1,22 @@
+{
+  "name": "ss_typescript_vue",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "snakeskin": "^7.2.8",
+    "vue": "^2.3.3"
+  },
+  "devDependencies": {
+    "http-server": "^0.10.0",
+    "ts-loader": "^2.0.3",
+    "typescript": "^2.3.2",
+    "webpack": "^2.5.1"
+  }
+}
