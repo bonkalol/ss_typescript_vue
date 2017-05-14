@@ -1,5 +1,5 @@
 module.exports = {
-	entry: './src/ts/index.ts',
+	entry: './src/ts/index.js',
 	output: {
 		filename: 'dist/js/bundle.js',
 		path: __dirname
@@ -7,9 +7,9 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /.ts$/,
+				test: /.js$/,
 				exclude: /node_modules/,
-				loader: 'ts-loader'
+				loader: 'babel-loader'
 			},
 
 			{
