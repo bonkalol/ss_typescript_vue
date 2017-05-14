@@ -1,5 +1,10 @@
+declare var require: {
+	<T>(path: string): T;
+	(paths: string[], callback: (...modules: any[]) => void): void;
+	ensure: (paths: string[], callback: (require: <T>(path: string) => T) => void) => void;
+};
+
 import Vue from 'vue';
-import { buttons } from './../templates/button.ss';
 
 Vue.component('custombutton', {
 	props: {
@@ -10,8 +15,7 @@ Vue.component('custombutton', {
 		type: String,
 		form: String
 	},
-	template: buttons.button()
-
+	template: require('./../templates/button.ss').buttons.button()
 });
 
 var App = new Vue({
