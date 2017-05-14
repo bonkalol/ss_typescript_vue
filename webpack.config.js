@@ -7,13 +7,21 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.tsx?$/,
-				loader: 'ts-loader',
+				test: /.ts$/,
 				exclude: /node_modules/,
+				loader: 'ts-loader'
+			},
+
+			{
+				test: /.ss$/,
+				exclude: /node_modules/,
+				loader: 'snakeskin-loader?pack=true'
 			}
 		]
 	},
 	resolve: {
-		extensions: [".tsx", ".ts", ".js"]
+		alias: {
+			vue: 'vue/dist/vue.js'
+		}
 	}
 };

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack"
+    "start": "webpack --progress --colors --watch"
   },
   "author": "",
   "license": "ISC",
@@ -14,9 +14,15 @@
     "vue": "^2.3.3"
   },
   "devDependencies": {
-    "http-server": "^0.10.0",
+    "browser-sync": "^2.18.8",
+    "gulp": "^3.9.1",
+    "gulp-stylus": "^2.6.0",
+    "run-sequence": "^1.2.2",
+    "snakeskin-loader": "^7.2.1",
     "ts-loader": "^2.0.3",
     "typescript": "^2.3.2",
-    "webpack": "^2.5.1"
+    "vue-loader": "^12.0.4",
+    "webpack": "^2.5.1",
+    "webpack-stream": "^3.2.0"
   }
 }
