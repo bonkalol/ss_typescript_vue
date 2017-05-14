@@ -1,6 +1,7 @@
 var gulp = require('gulp'),
 	webpack = require('webpack'),
 	webpackStream = require('webpack-stream'),
+	snakeskin = require('gulp-snakeskin'),
 	stylus = require('gulp-stylus'),
 	runSequence = require('run-sequence'),
 	wpconfig = require('./webpack.config.js'),
@@ -13,6 +14,11 @@ function log(err) {
 	beep();
 }
 
+gulp.task('snakeSkin', function () {
+	return gulp.src('./src/templates/*')
+		.pipe(snakeskin({prettyPrint: true, adapter: 'ss2vue'}))
+		.pipe(gulp.dest('src/templates'));
+});
 
 gulp.task('javascript', function () {
 	return gulp.src('./src/ts/index.ts')
@@ -42,6 +48,7 @@ gulp.task('default', function(callback) {
 		open: false
 	});
 	runSequence(
+		'snakeSkin',
 		'javascript',
 		['stylus', 'static'],
 		'watch',
@@ -49,6 +56,7 @@ gulp.task('default', function(callback) {
 });
 
 gulp.task('watch', function() {
+	gulp.watch('./src/templates/*', ['snakeSkin']);
 	gulp.watch('./src/ts/*', ['javascript']);
 	gulp.watch('./src/stylus/*', ['stylus']);
 	gulp.watch('./src/static/*', ['static']);
