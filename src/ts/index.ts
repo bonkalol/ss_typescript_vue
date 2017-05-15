@@ -1,14 +1,16 @@
 import Vue from 'vue';
-import { buttons } from './../templates/button.ss.js';
-debugger;
+import button_templates from './../templates/button.ss';
+
 Vue.component('custombutton', {
 	props: {
 		label: {
 			type: String,
 			required: true
-		}
+		},
+		type: String,
+		form: String
 	},
-	template: buttons.button()
+	template: button_templates.buttons.button()
 });
 
 var App = new Vue({
@@ -17,4 +19,3 @@ var App = new Vue({
 		test: '123'
 	}
 });
-

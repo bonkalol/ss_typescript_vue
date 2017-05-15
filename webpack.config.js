@@ -10,6 +10,11 @@ module.exports = {
 				test: /.ts$/,
 				exclude: /node_modules/,
 				loader: 'ts-loader'
+			},
+			{
+				test: /.ss$/,
+				exclude: /node_modules/,
+				loader: 'snakeskin-loader'
 			}
 		]
 	},
