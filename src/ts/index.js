@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { buttons } from './../templates/button.ss';
+import button_templates from './../templates/button.ss';
 
 Vue.component('custombutton', {
 	props: {
@@ -10,8 +10,7 @@ Vue.component('custombutton', {
 		type: String,
 		form: String
 	},
-	template: buttons.button()
-
+	template: button_templates.buttons.button()
 });
 
 var App = new Vue({
@@ -20,4 +19,3 @@ var App = new Vue({
 		test: '123'
 	}
 });
-

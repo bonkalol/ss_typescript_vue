@@ -11,11 +11,10 @@ module.exports = {
 				exclude: /node_modules/,
 				loader: 'babel-loader'
 			},
-
 			{
 				test: /.ss$/,
 				exclude: /node_modules/,
-				loader: 'snakeskin-loader?pack=true'
+				loader: 'snakeskin-loader'
 			}
 		]
 	},
