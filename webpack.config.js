@@ -14,7 +14,7 @@ module.exports = {
 			{
 				test: /.ss$/,
 				exclude: /node_modules/,
-				loader: 'snakeskin-loader'
+				loader: 'snakeskin-loader?exec=false&prettyPrint=true'
 			}
 		]
 	},
