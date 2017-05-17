@@ -1,5 +1,5 @@
 module.exports = {
-	entry: './src/ts/index.ts',
+	entry: './src/ts/App.ts',
 	output: {
 		filename: 'dist/js/bundle.js',
 		path: __dirname
@@ -7,9 +7,9 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /.js$/,
+				test: /.ts$/,
 				exclude: /node_modules/,
-				loader: 'babel-loader'
+				loader: 'ts-loader'
 			},
 			{
 				test: /.ss$/,
@@ -21,6 +21,7 @@ module.exports = {
 	resolve: {
 		alias: {
 			vue: 'vue/dist/vue.js'
-		}
+		},
+		extensions: ['.ts', '.tsx', '.js', '.json']
 	}
 };
